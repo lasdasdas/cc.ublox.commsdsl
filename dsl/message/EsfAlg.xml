@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema name="ublox">
+    <message name="EsfAlg" id="MsgId.EsfAlg" displayName="ESF-ALG" order="0" platforms="+ublox6,ublox8" sender="server">
+        <ref field="itow" />
+        <int name="version" type="uint8" defaultValue="1" validRange="[0, 2]" />
+        <bitfield name="flags">
+            <set name="bits" bitLength="1">
+                <bit name="AutoMntAlgOn" idx="0" />
+            </set>
+            <enum name="status" type="uint8" bitLength="7">
+                <validValue name="UserDefined" val="0" displayName="user-defined/fixed angles are used"/>
+                <validValue name="RollPitchAlignment" val="1" displayName="IMU-mount roll/pitch angles alignment is ongoing"/>
+                <validValue name="RollPitchYawAlignment" val="2" displayName="IMU-mount roll/pitch/yaw angles alignment is ongoing"/>
+                <validValue name="CoarseAlignment" val="3" displayName="coarse IMU-mount alignment are used"/>
+                <validValue name="FineAlignment" val="4" displayName="fine IMU-mount alignment are used"/>
+            </enum>
+        </bitfield>
+        <set name="error" length="1">
+            <bit name="tiltAlgError" idx="0" />
+            <bit name="yawAlgError" idx="1" />
+            <bit name="angleError" idx="2" />
+        </set>
+        <ref field="res7" name="reserved1" />
+        <int name="yaw" type="uint32" units="deg" scaling="1/100" displayDecimals="2" />
+        <int name="pitch" type="int16" units="deg" scaling="1/100" displayDecimals="2" />
+        <int name="roll" type="int16" units="deg" scaling="1/100" displayDecimals="2" />
+    </message>
+</schema>

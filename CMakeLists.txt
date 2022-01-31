@@ -200,6 +200,7 @@ set (schema_files
     dsl/message/EsfRaw.xml
     dsl/message/EsfStatus.xml
     dsl/message/EsfIns.xml
+    dsl/message/EsfAlg.xml
     dsl/message/MgaGps.xml
     dsl/message/MgaGal.xml
     dsl/message/MgaBds.xml
