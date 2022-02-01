@@ -232,7 +232,7 @@ file(WRITE ${schema_files_list_file} "${schema_files_str}")
 
 
 set (tmp_dir "${CMAKE_BINARY_DIR}/output.tmp")
-set (code_input_dir "${CMAKE_SOURCE_DIR}/src")
+set (code_input_dir "${CMAKE_CURRENT_SOURCE_DIR}/src")
 
 if ("${OUTPUT_DIR}" STREQUAL "")
     set (OUTPUT_DIR "${CMAKE_BINARY_DIR}/output")
@@ -259,7 +259,7 @@ add_custom_command(
     DEPENDS ${schema_files} ${src_files} ${schema_files_list_file} ${extra_dep} "rm_tmp_tgt"
     COMMAND ${COMMSDSL2COMMS} ${warn_as_error} -V ${VERSION}
         --cc-tag ${COMMS_TAG} -o ${tmp_dir} 
-        -c ${code_input_dir} -p ${CMAKE_SOURCE_DIR} -i ${schema_files_list_file} 
+        -c ${code_input_dir} -p ${CMAKE_CURRENT_SOURCE_DIR} -i ${schema_files_list_file} 
         ${COMMSDSL2COMMS_EXTRA_ARGS} 
 )
 
@@ -267,7 +267,7 @@ set (readme_file "${tmp_dir}/README.md")
 add_custom_command(
     OUTPUT ${readme_file}
     DEPENDS ${tmp_dir} 
-    COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_SOURCE_DIR}/readme.generated ${readme_file}
+    COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_SOURCE_DIR}/readme.generated ${readme_file}
 )
 
 set (output_tgt ${name}_output_tgt)
