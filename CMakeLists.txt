@@ -271,12 +271,15 @@ add_custom_command(
 )
 
 set (output_tgt ${name}_output_tgt)
-add_custom_target(${PROJECT_NAME} ALL
+add_custom_target(${PROJECT_NAME}_gen ALL
     COMMAND ${CMAKE_COMMAND}
         -DGENERATED="${tmp_dir}" -DOUTPUT="${OUTPUT_DIR}"
         -P "${CMAKE_CURRENT_LIST_DIR}/CopyGenerated.cmake"
     DEPENDS ${tmp_dir} ${readme_file} "${CMAKE_CURRENT_LIST_DIR}/CopyGenerated.cmake" ${schema_files} ${src_files})
 
+add_library(${PROJECT_NAME} INTERFACE)
+add_dependencies(${PROJECT_NAME} ${PROJECT_NAME}_gen)
+target_include_directories(${PROJECT_NAME} INTERFACE "${OUTPUT_DIR}/include")
 
 if (UBLOX_NO_EXAMPLES)
     return ()
