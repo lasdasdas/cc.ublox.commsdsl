@@ -145,6 +145,7 @@
             <validValue name="EsfRaw" val="0x1003" displayName="ESF-RAW" />
             <validValue name="EsfStatus" val="0x1010" displayName="ESF-STATUS" />
             <validValue name="EsfIns" val="0x1015" displayName="ESF-INS" />
+            <validValue name="EsfAlg" val="0x1014" displayName="ESF-ALG" />
             <validValue name="MgaGps" val="0x1300" displayName="MGA-GPS" />
             <validValue name="MgaGal" val="0x1302" displayName="MGA-GAL" />
             <validValue name="MgaBds" val="0x1303" displayName="MGA-BDS" />
