@@ -24,5 +24,9 @@
         <int name="yaw" type="uint32" units="deg" scaling="1/100" displayDecimals="2" />
         <int name="pitch" type="int16" units="deg" scaling="1/100" displayDecimals="2" />
         <int name="roll" type="int16" units="deg" scaling="1/100" displayDecimals="2" />
+      </message>
+
+    <message name="EsfAlgPoll" id="MsgId.EsfAlg" displayName="ESF-ALG (Poll)" order="1">
+        <sender value="client" />
     </message>
 </schema>

@@ -5,6 +5,20 @@
 #include "Session.h"
 #include "ProgramOptions.h"
 
+struct Session2 : ublox::simple_pos::Session {
+  Session2(ublox::common::boost_wrap::io& io, const std::string& dev, unsigned int baudrate)
+    : Session( io,  dev,  baudrate){
+
+  }
+
+    //void handle(InNavPosllh& msg){(void)msg; std::cout << "got1" << std::endl;}
+    //void handle(InNavAttMsg& msg){(void)msg; std::cout << "got2" << std::endl;}
+    //void handle(InEsfStatus& msg){(void)msg; std::cout << "got3" << std::endl;};
+    //void handle(InEsfAlg& msg){(void)msg; std::cout << "got4" << std::endl;};
+    //void handle(InNavTimeutc& msg){(void)msg; std::cout << "got5" << std::endl;};;
+    //void handle(InNavSol& msg){(void)msg; std::cout << "got6" << std::endl;};
+
+};
 
 int main(int argc, const char* argv[])
 {
@@ -32,7 +46,7 @@ int main(int argc, const char* argv[])
                 std::cerr << "Termination due to signal " << signum << std::endl;
             });
 
-        ublox::simple_pos::Session session(io, options.device());
+        Session2 session(io, options.device(), 921600);
         if (!session.start()) {
             return -1;
         }
