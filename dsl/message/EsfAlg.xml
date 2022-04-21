@@ -20,7 +20,7 @@
             <bit name="yawAlgError" idx="1" />
             <bit name="angleError" idx="2" />
         </set>
-        <ref field="res7" name="reserved1" />
+        <ref field="res1" name="reserved1" />
         <int name="yaw" type="uint32" units="deg" scaling="1/100" displayDecimals="2" />
         <int name="pitch" type="int16" units="deg" scaling="1/100" displayDecimals="2" />
         <int name="roll" type="int16" units="deg" scaling="1/100" displayDecimals="2" />
