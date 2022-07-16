@@ -12,10 +12,11 @@ struct Session2 : ublox::simple_pos::Session {
   }
 
     //void handle(InNavPosllh& msg){(void)msg; std::cout << "got1" << std::endl;}
-    //void handle(InNavAttMsg& msg){(void)msg; std::cout << "got2" << std::endl;}
-    //void handle(InEsfStatus& msg){(void)msg; std::cout << "got3" << std::endl;};
-    //void handle(InEsfAlg& msg){(void)msg; std::cout << "got4" << std::endl;};
+    void handle(InNavAttMsg& msg){(void)msg; /*std::cout << "got2" << std::endl; */}
+    ////void handle(InEsfStatus& msg){(void)msg; std::cout << "got3" << std::endl;};
+    void handle(InEsfAlg& msg){(void)msg; std::cout << "got4" << std::endl;};
     //void handle(InNavTimeutc& msg){(void)msg; std::cout << "got5" << std::endl;};;
+    void handle(InNavPvt& msg){(void)msg;  std::cout << 8 << std::endl; };;
     //void handle(InNavSol& msg){(void)msg; std::cout << "got6" << std::endl;};
 
 };

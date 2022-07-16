@@ -140,7 +140,7 @@ protected:
                     return;
                 }
 
-                sendPosPoll();
+                //sendPosPoll();
             });
     }
 
@@ -199,12 +199,12 @@ protected:
     //void handle(InNavTimeutc& msg){(void)msg; std::cout << "got5" << std::endl;};;
     //void handle(InNavSol& msg){(void)msg; std::cout << "got6" << std::endl;};
     //void handle(InNavPvt& msg){(void)msg; std::cout << "got7" << std::endl;};
-    virtual void handle(InNavPosllh& msg) = 0;
+    //virtual void handle(InNavPosllh& msg) = 0;
     virtual void handle(InNavAttMsg& msg) = 0;
-    virtual void handle(InEsfStatus& msg) = 0;
+    //virtual void handle(InEsfStatus& msg) = 0;
     virtual void handle(InEsfAlg& msg) = 0;
-    virtual void handle(InNavTimeutc& msg) = 0;
-    virtual void handle(InNavSol& msg) = 0;
+    //virtual void handle(InNavTimeutc& msg) = 0;
+   // virtual void handle(InNavSol& msg) = 0;
     virtual void handle(InNavPvt& msg) = 0;
 
 
